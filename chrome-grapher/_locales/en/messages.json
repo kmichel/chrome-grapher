@@ -1,0 +1,11 @@
+{
+    "extension_name": {
+        "message": "Grapher"
+    },
+    "extension_description": {
+        "message": "Graph numerical values in a developer panel."
+    },
+    "Clear": {
+        "message": "Clear"
+    }
+}
