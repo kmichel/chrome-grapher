@@ -8,19 +8,20 @@ var GraphModel = function (label) {
 };
 
 GraphModel.prototype = {
-    add_values: function (values) {
-        if (!values.length)
+    add_records: function (records) {
+        if (!records.length)
             return;
-        values.forEach(function (value) {
+        records.forEach(function (record) {
             // TODO: understand why NaN disappear, probably because of Pseudo-JSON transfer through MessageChannel
-            if (value[0] == null)
-                value[0] = NaN;
-            else if (value[0] < this.min_value)
-                this.min_value = value[0];
-            else if (value[0] > this.max_value)
-                this.max_value = value[0];
-            this.values.push(value[0]);
-            this.timestamps.push(value[1]);
+            var value = record[0];
+            if (value == null)
+                value = NaN;
+            else if (value < this.min_value)
+                this.min_value = value;
+            else if (value > this.max_value)
+                this.max_value = value;
+            this.values.push(value);
+            this.timestamps.push(record[1]);
         }, this);
         this.notify_views();
     },

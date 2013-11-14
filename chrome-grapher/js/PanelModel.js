@@ -5,14 +5,14 @@ var PanelModel = function () {
 };
 
 PanelModel.prototype = {
-    add_values: function (label, values) {
-        if (!values.length)
+    add_records: function (label, records) {
+        if (!records.length)
             return;
-        this.timespan.include_value(values[0][1]);
-        this.timespan.include_value(values[values.length - 1][1]);
+        this.timespan.include_value(records[0][1]);
+        this.timespan.include_value(records[records.length - 1][1]);
         if (!this.graphs.hasOwnProperty(label))
             this.graphs[label] = new GraphModel(label);
-        this.graphs[label].add_values(values);
+        this.graphs[label].add_records(records);
         this.notify_views();
     },
     reset: function () {

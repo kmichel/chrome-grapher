@@ -19,11 +19,11 @@ function receive_from_page(message) {
     if (message.type == "page-ready") {
         send_to_page(({type: "panel-opened"}));
     }
-    if (message.type == "data-bundle") {
-        var storage = message.data;
-        for (var label in storage)
-            if (storage.hasOwnProperty(label))
-                model.add_values(label, storage[label]);
+    if (message.type == "add-records") {
+        var records = message.records;
+        for (var label in records)
+            if (records.hasOwnProperty(label))
+                model.add_records(label, records[label]);
     }
 }
 
