@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="128"
+   height="128"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="icon.svg">
+  <title
+     id="title3973">Chrome Grapher Icon</title>
+  <defs
+     id="defs4">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3908"
+       is_visible="true" />
+    <inkscape:path-effect
+       is_visible="true"
+       id="path-effect3869"
+       effect="spiro" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3799">
+      <stop
+         style="stop-color:#dce1f0;stop-opacity:0.80000001"
+         offset="0"
+         id="stop3801" />
+      <stop
+         style="stop-color:#dce1f0;stop-opacity:0.4"
+         offset="1"
+         id="stop3803" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3793"
+       is_visible="true" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3789"
+       is_visible="true" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3820">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3822"
+         width="128"
+         height="128"
+         x="0"
+         y="924.36218"
+         rx="8" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3799"
+       id="linearGradient3838"
+       gradientUnits="userSpaceOnUse"
+       x1="64.144684"
+       y1="37.042061"
+       x2="64.144684"
+       y2="128.08109" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3891">
+      <rect
+         style="fill:#6e6e6e;fill-opacity:1;stroke:none"
+         id="rect3893"
+         width="48"
+         height="48"
+         x="140"
+         y="1004.3622"
+         rx="3" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3799"
+       id="linearGradient3906"
+       gradientUnits="userSpaceOnUse"
+       x1="165.25"
+       y1="1018.068"
+       x2="165.25"
+       y2="1052.0826" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3799"
+       id="linearGradient3918"
+       x1="208.3085"
+       y1="1041.0695"
+       x2="208.3085"
+       y2="1052.4716"
+       gradientUnits="userSpaceOnUse" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3929">
+      <rect
+         style="fill:#6e6e6e;fill-opacity:1;stroke:none"
+         id="rect3931"
+         width="16"
+         height="16"
+         x="200"
+         y="1036.3622"
+         rx="2" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="176.72068"
+     inkscape:cy="40.337282"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1129"
+     inkscape:window-height="834"
+     inkscape:window-x="313"
+     inkscape:window-y="1"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Chrome Grapher Icon</dc:title>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>s</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-924.36218)">
+    <g
+       id="g3807"
+       clip-path="url(#clipPath3820)"
+       transform="translate(0,-2.6171874e-6)"
+       inkscape:export-filename="chrome-grapher/icons/icon128.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="924.36218"
+         x="0"
+         height="128"
+         width="128"
+         id="rect3797"
+         style="fill:#f8f8f8;fill-opacity:1;stroke:none" />
+      <rect
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none"
+         id="rect3759"
+         width="2"
+         height="128"
+         x="31"
+         y="924.36218" />
+      <rect
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none"
+         id="rect3763"
+         width="2"
+         height="128"
+         x="95"
+         y="924.36218" />
+      <path
+         style="fill:url(#linearGradient3838);fill-opacity:1;stroke:none"
+         d="m 0,96 c 6.1575432,4.45049 13.735988,6.90252 21.3335,6.90252 7.597512,0 15.175957,-2.45203 21.3335,-6.90252 5.261558,-3.802897 9.426385,-8.961807 12.785666,-14.517097 3.359281,-5.555291 5.95867,-11.529428 8.547475,-17.482923 2.588806,-5.953495 5.188199,-11.927631 8.54749,-17.482916 C 75.906921,40.96178 80.071762,35.802879 85.333333,32 91.490839,27.54957 99.069219,25.097577 106.66667,25.097577 114.26411,25.097577 121.84249,27.54957 128,32 l 0,96 -128,0 0,-32"
+         id="path3795"
+         inkscape:path-effect="#path-effect3793"
+         inkscape:original-d="m 0,96 c 10.354063,0 42.414462,10.6066 42.667,0 C 42.787183,90.952314 54.613378,6.9730066 85.333333,32 105.55479,48.47406 128,32 128,32 l 0,96 -128,0 z"
+         inkscape:connector-curvature="0"
+         transform="translate(0,924.36218)"
+         sodipodi:nodetypes="csscccc" />
+      <path
+         sodipodi:nodetypes="cssc"
+         transform="translate(0,924.36218)"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 0,96 c 10.354063,0 42.414462,10.6066 42.667,0 C 42.787183,90.952314 54.613378,6.9730066 85.333333,32 105.55479,48.47406 128,32 128,32"
+         inkscape:path-effect="#path-effect3793"
+         id="path3791"
+         d="m 0,96 c 6.1575432,4.45049 13.735988,6.90252 21.3335,6.90252 7.597512,0 15.175957,-2.45203 21.3335,-6.90252 5.261558,-3.802897 9.426385,-8.961807 12.785666,-14.517097 3.359281,-5.555291 5.95867,-11.529428 8.547475,-17.482923 2.588806,-5.953495 5.188199,-11.927631 8.54749,-17.482916 C 75.906921,40.96178 80.071762,35.802879 85.333333,32 91.490839,27.54957 99.069219,25.097577 106.66667,25.097577 114.26411,25.097577 121.84249,27.54957 128,32"
+         style="fill:none;stroke:#aaaaaa;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <g
+       id="g3882"
+       clip-path="url(#clipPath3891)"
+       inkscape:export-filename="chrome-grapher/icons/icon48.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         y="1004.3622"
+         x="140"
+         height="48"
+         width="48"
+         id="rect3840"
+         style="fill:#f8f8f8;fill-opacity:1;stroke:none" />
+      <rect
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none"
+         id="rect3861"
+         width="1"
+         height="48"
+         x="152"
+         y="1004.3622" />
+      <rect
+         y="1004.3622"
+         x="175"
+         height="48"
+         width="1"
+         id="rect3863"
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none" />
+      <path
+         style="fill:url(#linearGradient3906);fill-opacity:1;stroke:none"
+         d="m 140,1040.3622 c 2.30908,1.6689 5.151,2.5884 8.00006,2.5884 2.84907,0 5.69099,-0.9195 8.00007,-2.5884 1.97308,-1.4261 3.53489,-3.3607 4.79462,-5.4439 1.25973,-2.0832 2.2345,-4.3235 3.20531,-6.5561 0.9708,-2.2326 1.94557,-4.4729 3.2053,-6.5561 1.25974,-2.0832 2.82155,-4.0178 4.79464,-5.4439 2.30906,-1.6689 5.15096,-2.5884 8,-2.5884 2.84904,0 5.69094,0.9195 8,2.5884 l 0,36 -48,0 0,-12"
+         id="path3872"
+         inkscape:path-effect="#path-effect3869"
+         inkscape:original-d="m 140,1040.3622 c 3.88277,0 15.90542,3.9774 16.00013,0 0.0451,-1.8929 4.47989,-33.3852 15.99987,-24 7.58305,6.1777 16,0 16,0 l 0,36 -48,0 z"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csscccc" />
+      <path
+         sodipodi:nodetypes="cssc"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 140,1040.3622 c 3.88277,0 15.90542,3.9774 16.00013,0 0.0451,-1.8929 4.47989,-33.3852 15.99987,-24 7.58305,6.1777 16,0 16,0"
+         inkscape:path-effect="#path-effect3869"
+         id="path3867"
+         d="m 140,1040.3622 c 2.30908,1.6689 5.151,2.5884 8.00006,2.5884 2.84907,0 5.69099,-0.9195 8.00007,-2.5884 1.97308,-1.4261 3.53489,-3.3607 4.79462,-5.4439 1.25973,-2.0832 2.2345,-4.3235 3.20531,-6.5561 0.9708,-2.2326 1.94557,-4.4729 3.2053,-6.5561 1.25974,-2.0832 2.82155,-4.0178 4.79464,-5.4439 2.30906,-1.6689 5.15096,-2.5884 8,-2.5884 2.84904,0 5.69094,0.9195 8,2.5884"
+         style="fill:none;stroke:#aaaaaa;stroke-linecap:round;stroke-opacity:1" />
+    </g>
+    <g
+       id="g3920"
+       clip-path="url(#clipPath3929)"
+       inkscape:export-filename="chrome-grapher/icons/icon16.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="2"
+         y="1036.3622"
+         x="200"
+         height="16"
+         width="16"
+         id="rect3895"
+         style="fill:#f8f8f8;fill-opacity:1;stroke:none" />
+      <rect
+         y="1036.3622"
+         x="204"
+         height="16"
+         width="1"
+         id="rect3897"
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none" />
+      <rect
+         style="fill:#e8e8e8;fill-opacity:1;stroke:none"
+         id="rect3899"
+         width="1"
+         height="16"
+         x="211"
+         y="1036.3622" />
+      <path
+         style="fill:url(#linearGradient3918);fill-opacity:1;stroke:none"
+         d="m 200,1048.3622 c 0.76969,0.5563 1.717,0.8628 2.66669,0.8628 0.94969,0 1.897,-0.3065 2.66669,-0.8628 0.65769,-0.4754 1.1783,-1.1202 1.59821,-1.8146 0.41991,-0.6944 0.74483,-1.4412 1.06843,-2.1854 0.3236,-0.7442 0.64853,-1.491 1.06844,-2.1854 0.41991,-0.6944 0.94051,-1.3392 1.59821,-1.8146 0.76969,-0.5563 1.71698,-0.8628 2.66666,-0.8628 0.94969,0 1.89698,0.3065 2.66667,0.8628 l 0,12 -16,0 0,-4"
+         id="path3910"
+         inkscape:path-effect="#path-effect3908"
+         inkscape:original-d="m 200,1048.3622 c 1.29426,0 5.30181,1.3258 5.33338,0 0.015,-0.631 1.49329,-11.1284 5.33329,-8 2.52768,2.0592 5.33333,0 5.33333,0 l 0,12 -16,0 z"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csscccc" />
+      <path
+         sodipodi:nodetypes="cssc"
+         inkscape:connector-curvature="0"
+         inkscape:original-d="m 200,1048.3622 c 1.29426,0 5.30181,1.3258 5.33338,0 0.015,-0.631 1.49329,-11.1284 5.33329,-8 2.52768,2.0592 5.33333,0 5.33333,0"
+         inkscape:path-effect="#path-effect3908"
+         id="path3901"
+         d="m 200,1048.3622 c 0.76969,0.5563 1.717,0.8628 2.66669,0.8628 0.94969,0 1.897,-0.3065 2.66669,-0.8628 0.65769,-0.4754 1.1783,-1.1202 1.59821,-1.8146 0.41991,-0.6944 0.74483,-1.4412 1.06843,-2.1854 0.3236,-0.7442 0.64853,-1.491 1.06844,-2.1854 0.41991,-0.6944 0.94051,-1.3392 1.59821,-1.8146 0.76969,-0.5563 1.71698,-0.8628 2.66666,-0.8628 0.94969,0 1.89698,0.3065 2.66667,0.8628"
+         style="fill:none;stroke:#aaaaaa;stroke-linecap:round;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
