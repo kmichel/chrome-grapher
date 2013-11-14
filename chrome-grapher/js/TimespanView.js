@@ -21,11 +21,22 @@ TimespanView.prototype = {
             }, this);
             context.stroke();
             context.fillStyle = "#222";
-            context.font = "10px 'Lucida Grande', sans-serif";
+            context.font = "10px " + window.getComputedStyle(this.canvas, null).getPropertyValue("font-family");
+            var thin_space_width = context.measureText(' ').width * 0.5;
             steps.forEach(function (step) {
-                // TODO: reduce space between value and unit
-                var text_metrics = context.measureText(step.label);
-                context.fillText(step.label, step.x - text_metrics.width - 3, 16);
+                // This is an ugly workaround because Chrome thin and hair spaces are too large in canvas
+                var position = step.x - 3;
+                var value = step.label;
+                var unit = "ms";
+                if (value >= 1000) {
+                    value /= 1000;
+                    unit = "s";
+                }
+                value = value.toPrecision(3);
+                var unit_width = context.measureText(unit).width;
+                context.fillText(unit, position - unit_width, 16);
+                var value_width = context.measureText(value).width;
+                context.fillText(value, position - unit_width - thin_space_width - value_width, 16);
             });
         }
         this.has_pending_draw = false;

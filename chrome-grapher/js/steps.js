@@ -11,9 +11,9 @@ function generate_steps(range, pixels, min_step_size) {
         step_amount *= .5;
     }
     var steps = [];
-    for (var px = step_size, val = step_amount; px < pixels; px += step_size, val += step_amount)
+    for (var px = step_size, value = step_amount; px < pixels; px += step_size, value += step_amount)
         steps.push({
             x: px,
-            label: val >= 1000 ? (val / 1000).toPrecision(3) + " s" : val.toPrecision(3) + " ms"});
+            label: value});
     return steps;
 }
