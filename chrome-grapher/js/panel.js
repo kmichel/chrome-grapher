@@ -15,6 +15,8 @@ var model = new PanelModel();
 var view = new PanelView(model, document.body);
 model.views.push(view);
 
+var maximum_timespan_in_seconds = 600;
+
 function receive_from_page(message) {
     if (message.type == "page-ready") {
         send_to_page(({type: "panel-opened"}));
@@ -24,6 +26,7 @@ function receive_from_page(message) {
         for (var label in records)
             if (records.hasOwnProperty(label))
                 model.add_records(label, records[label]);
+        model.strip_records_older_than(maximum_timespan_in_seconds, true);
     }
 }
 

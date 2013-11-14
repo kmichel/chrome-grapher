@@ -17,6 +17,16 @@ TimespanModel.prototype = {
             return;
         this.notify_views();
     },
+    exclude_values_before: function (timestamp) {
+        if (!this.is_valid())
+            return;
+        if (this.start < timestamp) {
+            this.start = timestamp;
+            if (this.stop < timestamp)
+                this.stop = timestamp;
+            this.notify_views();
+        }
+    },
     reset: function () {
         this.start = Infinity;
         this.stop = -Infinity;
