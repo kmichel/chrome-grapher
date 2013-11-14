@@ -86,12 +86,26 @@ function update_time_range(graphs, time_range) {
 }
 
 function update_time_range_view(time_range) {
+    var canvas = document.getElementById("timespan");
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
     if (time_range.start < time_range.stop) {
-        document.getElementById("start-time").innerText = time_range.start.toFixed(3) + "ms";
-        document.getElementById("stop-time").innerText = time_range.stop.toFixed(3) + "ms";
-    } else {
-        document.getElementById("start-time").innerText = "";
-        document.getElementById("stop-time").innerText = "";
+        var context = canvas.getContext("2d");
+        var steps = generate_steps(time_range.stop - time_range.start, canvas.width, 50);
+        context.strokeStyle = "#e8e8e8";
+        context.lineCap = "butt";
+        context.beginPath();
+        steps.forEach(function (step) {
+            context.moveTo(step.x, 0);
+            context.lineTo(step.x, canvas.height - 0);
+        });
+        context.stroke();
+        context.fillStyle = "#222";
+        context.font = "10px 'Lucida Grande', sans-serif";
+        steps.forEach(function (step) {
+            var text_metrics = context.measureText(step.label);
+            context.fillText(step.label, step.x - text_metrics.width - 3, 16);
+        });
     }
 }
 
@@ -104,7 +118,9 @@ function update_graph(graph, time_range) {
     var min_time = time_range.start;
     var max_time = time_range.stop;
     graph.values.forEach(function (value) {
-        if (value[0] < min_value)
+        if (value[0] === null)
+            value[0] = NaN;
+        else if (value[0] < min_value)
             min_value = value[0];
         else if (value[0] > max_value)
             max_value = value[0];
@@ -113,29 +129,88 @@ function update_graph(graph, time_range) {
     var delta_time = max_time - min_time;
     var width = graph.canvas.width;
     var height = graph.canvas.height;
-    context.fillStyle = "#aad";
-    context.strokeStyle = "#666";
-    context.lineCap = "round";
+    var steps = generate_steps(max_time - min_time, width, 50);
+    context.strokeStyle = "#e8e8e8";
+    context.lineCap = "butt";
     context.beginPath();
-    var previous_x = 0;
-    var previous_y = height;
-    context.moveTo(-2, height);
-    graph.values.forEach(function (value) {
-        var value_height = (value[0] - min_value) / delta_value * (height - 4);
-        var value_y = height - 2 - value_height;
-        var value_x = (value[1] - min_time) / delta_time * (width);
-        if (value_x - previous_x > 2)
-            context.lineTo(value_x, previous_y);
-        context.lineTo(value_x, value_y);
-        previous_x = value_x;
-        previous_y = value_y;
+    steps.forEach(function (step) {
+        context.moveTo(step.x, 0);
+        context.lineTo(step.x, height - 0);
     });
-    context.lineTo(width + 2, previous_y);
-    context.lineTo(width + 2, height);
-    context.fill();
     context.stroke();
-    var last_value = graph.values[graph.values.length - 1][0];
-    graph.last_value.innerText = last_value % 1 == 0 ? last_value : last_value.toFixed(5);
+    if (graph.values.length) {
+        context.fillStyle = "rgba(220, 225, 240, 0.8)";
+        context.strokeStyle = "#aaa";
+        context.lineCap = "round";
+        draw_values(context, graph.values, min_value, delta_value, min_time, delta_time, width, height, true);
+        draw_values(context, graph.values, min_value, delta_value, min_time, delta_time, width, height, false);
+        var last_value = graph.values[graph.values.length - 1][0];
+        graph.last_value.innerText = last_value % 1 == 0 ? last_value : last_value.toFixed(5);
+    }
+}
+
+function draw_values(context, values, min_value, delta_value, min_time, delta_time, width, height, is_fill) {
+    function terminate(start, stop) {
+        if (is_fill) {
+            context.lineTo(stop, height);
+            context.lineTo(start, height);
+            context.fill();
+        } else
+            context.stroke();
+    }
+
+    context.beginPath();
+    var start_x = 0;
+    var previous_x = 0;
+    var previous_y = NaN;
+    var has_pending_point = false;
+    values.forEach(function (value) {
+        var value_height = delta_value == 0 ? height * 0.5 : (value[0] - min_value) / delta_value * (height - 5);
+        var value_y = height - 2.5 - value_height;
+        var value_x = (value[1] - min_time) / delta_time * (width);
+        if (!has_pending_point)
+            start_x = value_x;
+        if (value_y != previous_y) {
+            if (value_x - previous_x > 2 && has_pending_point)
+                context.lineTo(value_x, previous_y);
+            if (isNaN(value_y)) {
+                if (has_pending_point) {
+                    terminate(start_x, value_x);
+                    context.beginPath();
+                    has_pending_point = false;
+                }
+            } else {
+                context.lineTo(value_x, value_y);
+                has_pending_point = true;
+            }
+            previous_x = value_x;
+            previous_y = value_y;
+        }
+    });
+    if (has_pending_point) {
+        context.lineTo(width, previous_y);
+        terminate(start_x, width);
+    }
+}
+
+function generate_steps(range, pixels, min_step_size) {
+    var max_step_count = Math.floor(pixels / min_step_size);
+    var min_step_amount = range / max_step_count;
+    var step_amount = Math.pow(10, Math.ceil(Math.log(min_step_amount) / Math.LN10));
+    var step_size = step_amount / range * pixels;
+    if (step_size * .2 >= min_step_size) {
+        step_size *= .2;
+        step_amount *= .2;
+    } else if (step_size * .5 >= min_step_size) {
+        step_size *= .5;
+        step_amount *= .5;
+    }
+    var steps = [];
+    for (var px = step_size, val = step_amount; px < pixels; px += step_size, val += step_amount)
+        steps.push({
+            x: px,
+            label: val >= 1000 ? (val / 1000).toPrecision(3) + ' s' : val.toPrecision(3) + ' ms'});
+    return steps;
 }
 
 function clear_graphs() {

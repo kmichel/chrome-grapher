@@ -1,23 +1,45 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Lucida Grande', sans-serif;
+    font-size: 12px;
     -webkit-user-select: none;
 }
 
 #toolbar {
-    height: 23px;
-    border-bottom: 1px solid #e8e8e8;
-    line-height: 23px;
+    height: 24px;
+    line-height: 24px;
     font-size: 0.8em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.0));
+    display: flex;
+}
+
+#toolbar-buttons {
+    width: 99px;
+    text-indent: 1px;
+    border-right: 1px solid #f4f4f4;
+    flex-shrink: 0;
 }
 
 #timespan {
-    cursor: default;
+    flex-grow: 1;
+}
+
+#toolbar-unused-area {
+    width: 99px;
+    border-left: 1px solid #f4f4f4;
+    flex-shrink: 0;
+}
+
+#graph-list {
+    margin-top: 24px;
 }
 
 .graph-block {
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid #aaa;
     display: flex;
     height: 60px;
 }
