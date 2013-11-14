@@ -17,32 +17,31 @@ html, body {
 }
 
 .graph-block {
-    height: 60px;
     border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    height: 60px;
 }
 
 .graph-label {
-    float: left;
     width: 99px;
-    height: 60px;
     line-height: 60px;
     border-right: 1px solid #f4f4f4;
     text-indent: 10px;
     cursor: default;
+    flex-shrink: 0;
 }
 
 .graph-last-value {
-    float: right;
     width: 99px;
     border-left: 1px solid #f4f4f4;
     font-size: 1.4em;
     color: #666;
-    height: 60px;
     line-height: 60px;
     text-align: center;
     -webkit-user-select: text;
+    flex-shrink: 0;
 }
 
 .graph-block canvas {
-    display: block;
+    flex-grow: 1;
 }

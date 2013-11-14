@@ -62,8 +62,8 @@ function create_graph_entry(name) {
     last_value.className = "graph-last-value";
     var canvas = document.createElement("canvas");
     block.appendChild(label);
-    block.appendChild(last_value);
     block.appendChild(canvas);
+    block.appendChild(last_value);
     return {
         name: name,
         values: [],
