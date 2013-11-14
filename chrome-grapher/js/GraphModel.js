@@ -1,6 +1,7 @@
 var GraphModel = function (label) {
     this.label = label;
     this.values = [];
+    this.timestamps = [];
     this.min_value = Infinity;
     this.max_value = -Infinity;
     this.views = [];
@@ -18,9 +19,15 @@ GraphModel.prototype = {
                 this.min_value = value[0];
             else if (value[0] > this.max_value)
                 this.max_value = value[0];
+            this.values.push(value[0]);
+            this.timestamps.push(value[1]);
         }, this);
-        Array.prototype.push.apply(this.values, values);
         this.notify_views();
+    },
+    for_each_record: function (callback, scope) {
+        var length = this.values.length;
+        for (var i = 0; i < length; ++i)
+            callback.call(scope, this.values[i], this.timestamps[i]);
     },
     notify_views: function () {
         this.views.forEach(function (view) {

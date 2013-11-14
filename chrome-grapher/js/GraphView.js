@@ -42,7 +42,7 @@ GraphView.prototype = {
                 context.lineCap = "round";
                 this.draw_values(context, this.timespan_model.start, delta_time, width, height, true);
                 this.draw_values(context, this.timespan_model.start, delta_time, width, height, false);
-                var last_value = this.graph_model.values[this.graph_model.values.length - 1][0];
+                var last_value = this.graph_model.values[this.graph_model.values.length - 1];
                 this.last_value.innerText = last_value % 1 == 0 ? last_value : last_value.toFixed(5);
             }
         }
@@ -65,10 +65,10 @@ GraphView.prototype = {
         var has_pending_point = false;
         var min_value = this.graph_model.min_value;
         var delta_value = this.graph_model.max_value - this.graph_model.min_value;
-        this.graph_model.values.forEach(function (value) {
-            var value_height = delta_value == 0 ? height * 0.5 : (value[0] - min_value) / delta_value * (height - 5);
+        this.graph_model.for_each_record(function (value, timestamp) {
+            var value_height = delta_value == 0 ? height * 0.5 : (value - min_value) / delta_value * (height - 5);
             var value_y = height - 2.5 - value_height;
-            var value_x = (value[1] - min_time) / delta_time * (width);
+            var value_x = (timestamp - min_time) / delta_time * (width);
             if (!has_pending_point)
                 start_x = value_x;
             if (value_y != previous_y) {
