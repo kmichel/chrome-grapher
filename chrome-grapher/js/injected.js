@@ -38,18 +38,20 @@
     channel.port1.start();
 
     console.graph = function (name, value) {
-        var item = [value, performance.now()];
-        if (storage.hasOwnProperty(name))
-            storage[name].push(item);
-        else
-            storage[name] = [item];
-        if (panel_is_open && !has_pending_data) {
-            requestAnimationFrame(function () {
-                if (panel_is_open)
-                    send_pending_data();
-            }, window);
+        if (panel_is_open) {
+            var item = [value, performance.now()];
+            if (storage.hasOwnProperty(name))
+                storage[name].push(item);
+            else
+                storage[name] = [item];
+            if (!has_pending_data) {
+                has_pending_data = true;
+                requestAnimationFrame(function () {
+                    if (panel_is_open)
+                        send_pending_data();
+                }, window);
+            }
         }
-        has_pending_data = true;
     };
 
     send_to_extension({type: "page-ready"});
