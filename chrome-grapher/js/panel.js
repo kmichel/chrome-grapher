@@ -96,18 +96,19 @@ function update_time_range_view(time_range) {
 }
 
 function update_graph(graph, time_range) {
-    graph.canvas.width = graph.block.clientWidth - 200;
-    graph.canvas.height = 60;
+    graph.canvas.width = graph.canvas.clientWidth;
+    graph.canvas.height = graph.canvas.clientHeight;
     var context = graph.canvas.getContext("2d");
     var min_value = Infinity;
     var max_value = -Infinity;
     var min_time = time_range.start;
     var max_time = time_range.stop;
-    for (var i = 0; i < graph.values.length; ++i) {
-        var value = graph.values[i];
-        min_value = Math.min(min_value, value[0]);
-        max_value = Math.max(max_value, value[0]);
-    }
+    graph.values.forEach(function (value) {
+        if (value[0] < min_value)
+            min_value = value[0];
+        else if (value[0] > max_value)
+            max_value = value[0];
+    });
     var delta_value = max_value - min_value;
     var delta_time = max_time - min_time;
     var width = graph.canvas.width;
@@ -119,8 +120,7 @@ function update_graph(graph, time_range) {
     var previous_x = 0;
     var previous_y = height;
     context.moveTo(-2, height);
-    for (var i = 0; i < graph.values.length; ++i) {
-        var value = graph.values[i];
+    graph.values.forEach(function (value) {
         var value_height = (value[0] - min_value) / delta_value * (height - 4);
         var value_y = height - 2 - value_height;
         var value_x = (value[1] - min_time) / delta_time * (width);
@@ -129,7 +129,7 @@ function update_graph(graph, time_range) {
         context.lineTo(value_x, value_y);
         previous_x = value_x;
         previous_y = value_y;
-    }
+    });
     context.lineTo(width + 2, previous_y);
     context.lineTo(width + 2, height);
     context.fill();
@@ -153,9 +153,9 @@ document.querySelector("button[name=clear]").addEventListener("click", function 
     clear_graphs();
 });
 
-var localized_items =document.querySelectorAll("[class=localized]");
-for (var i=0; i<localized_items.length; ++i)
-    localized_items[i].innerText = chrome.i18n.getMessage(localized_items[i].innerText);
+Array.prototype.forEach.call(document.querySelectorAll(".localized"), function (element) {
+    element.innerText = chrome.i18n.getMessage(element.innerText);
+});
 
 chrome.devtools.network.onNavigated.addListener(function () {
     clear_graphs();
