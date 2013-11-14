@@ -6,7 +6,7 @@ html, body {
     -webkit-user-select: none;
 }
 
-#toolbar {
+.toolbar {
     height: 24px;
     line-height: 24px;
     font-size: 0.8em;
@@ -17,24 +17,24 @@ html, body {
     display: flex;
 }
 
-#toolbar-buttons {
+.toolbar-buttons {
     width: 99px;
     text-indent: 1px;
     border-right: 1px solid #f4f4f4;
     flex-shrink: 0;
 }
 
-#timespan {
+.timespan {
     flex-grow: 1;
 }
 
-#toolbar-unused-area {
+.toolbar-unused-area {
     width: 99px;
     border-left: 1px solid #f4f4f4;
     flex-shrink: 0;
 }
 
-#graph-list {
+.graph-list {
     margin-top: 24px;
 }
 
