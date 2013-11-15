@@ -47,9 +47,10 @@ GraphView.prototype = {
                 context.strokeStyle = "#888";
                 context.lineCap = "round";
                 this.draw_values(context, this.timespan_model.start, delta_time, width, height, false);
-                this.last_value.innerText = this.format_value(this.graph_model.values[this.graph_model.values.length - 1]);
             }
         }
+        if (this.graph_model.values.length)
+            this.last_value.innerText = this.format_value(this.graph_model.values[this.graph_model.values.length - 1]);
         this.has_pending_draw = false;
     },
     draw_values: function (context, min_time, delta_time, width, height, is_fill) {
