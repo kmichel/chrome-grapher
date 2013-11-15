@@ -16,10 +16,12 @@ GraphModel.prototype = {
             var value = record[0];
             if (value == null)
                 value = NaN;
-            else if (value < this.min_value)
-                this.min_value = value;
-            else if (value > this.max_value)
-                this.max_value = value;
+            else {
+                if (value < this.min_value)
+                    this.min_value = value;
+                if (value > this.max_value)
+                    this.max_value = value;
+            }
             this.values.push(value);
             this.timestamps.push(record[1]);
         }, this);

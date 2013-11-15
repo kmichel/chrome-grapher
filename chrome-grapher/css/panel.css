@@ -39,7 +39,7 @@ html, body {
 }
 
 .graph-block {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #888;
     display: flex;
     height: 60px;
 }

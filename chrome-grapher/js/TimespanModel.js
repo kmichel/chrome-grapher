@@ -1,6 +1,7 @@
 var TimespanModel = function () {
     this.start = Infinity;
     this.stop = -Infinity;
+    this.highlight_fraction = NaN;
     this.views = [];
 };
 
@@ -9,13 +10,17 @@ TimespanModel.prototype = {
         return this.stop > this.start;
     },
     include_value: function (value) {
-        if (value < this.start)
+        var has_changed = false;
+        if (value < this.start) {
             this.start = value;
-        else if (value > this.stop)
+            has_changed = true;
+        }
+        if (value > this.stop) {
             this.stop = value;
-        else
-            return;
-        this.notify_views();
+            has_changed = true;
+        }
+        if (has_changed)
+            this.notify_views();
     },
     exclude_values_before: function (timestamp) {
         if (!this.is_valid())
@@ -27,9 +32,18 @@ TimespanModel.prototype = {
             this.notify_views();
         }
     },
+    set_highlight_fraction: function (fraction) {
+        this.highlight_fraction = fraction;
+        this.notify_views();
+    },
+    clear_highlight: function () {
+        this.highlight_fraction = NaN;
+        this.notify_views();
+    },
     reset: function () {
         this.start = Infinity;
         this.stop = -Infinity;
+        this.highlight_fraction = NaN;
         this.notify_views();
     },
     notify_views: function () {

@@ -17,9 +17,18 @@ TimespanView.prototype = {
             context.beginPath();
             steps.forEach(function (step) {
                 context.moveTo(step.x, 0);
-                context.lineTo(step.x, this.canvas.height - 0);
+                context.lineTo(step.x, this.canvas.height);
             }, this);
             context.stroke();
+
+            var highlight_x = this.model.highlight_fraction * this.canvas.width;
+            if (!isNaN(highlight_x)) {
+                context.strokeStyle = "#888";
+                context.beginPath();
+                context.moveTo(Math.floor(highlight_x) + 0.5, 0);
+                context.lineTo(Math.floor(highlight_x) + 0.5, this.canvas.height);
+                context.stroke();
+            }
             context.fillStyle = "#222";
             context.font = "10px " + window.getComputedStyle(this.canvas, null).getPropertyValue("font-family");
             var thin_space_width = context.measureText(' ').width * 0.5;

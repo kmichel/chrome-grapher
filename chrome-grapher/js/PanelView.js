@@ -36,6 +36,7 @@ PanelView.prototype = {
                     this.graph_list_element.appendChild(element);
                     this.graph_views[label] = new GraphView(this.model.graphs[label], this.model.timespan, element);
                     this.model.graphs[label].views.push(this.graph_views[label]);
+                    this.model.timespan.views.push(this.graph_views[label]);
                 }
     },
     remove_old_graphs: function () {
@@ -44,6 +45,7 @@ PanelView.prototype = {
                 if (!this.model.graphs.hasOwnProperty(label)) {
                     var element = this.graph_views[label].element;
                     element.parentNode.removeChild(element);
+                    this.model.timespan.views.splice(this.model.timespan.views.indexOf(this.model.graphs[label]), 1);
                     delete this.graph_views[label];
                 }
     },
