@@ -26,7 +26,7 @@ function receive_from_page(message) {
         for (var label in records)
             if (records.hasOwnProperty(label))
                 model.add_records(label, records[label]);
-        model.strip_records_older_than(maximum_timespan_in_seconds, true);
+        model.strip_records_older_than(maximum_timespan_in_seconds);
     }
 }
 

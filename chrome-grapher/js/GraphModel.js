@@ -27,11 +27,9 @@ GraphModel.prototype = {
         }, this);
         this.notify_views();
     },
-    strip_records_before: function (timestamp, keep_one_extra) {
+    strip_records_before: function (timestamp) {
         var index = this.get_last_index_before(timestamp);
         if (index != -1) {
-            if (keep_one_extra && index > 0)
-                --index;
             // It'd be nice to use a ring buffer here but it's less than trivial since
             // we clamp based on time but store an undetermined number of records.
             this.values.splice(0, index);
@@ -46,7 +44,7 @@ GraphModel.prototype = {
         var length = this.timestamps.length;
         for (var i = 0; i < length; ++i)
             if (this.timestamps[i] >= timestamp)
-                return i;
+                return i - 1;
         return -1;
     },
     for_each_record: function (callback, scope) {

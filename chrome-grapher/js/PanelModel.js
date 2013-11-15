@@ -15,14 +15,14 @@ PanelModel.prototype = {
         this.graphs[label].add_records(records);
         this.notify_views();
     },
-    strip_records_older_than: function (seconds, keep_one_extra) {
+    strip_records_older_than: function (seconds) {
         if (!this.timespan.is_valid())
             return;
         var clamp_time = this.timespan.stop - seconds * 1000;
         this.timespan.exclude_values_before(clamp_time);
         for (var label in this.graphs)
             if (this.graphs.hasOwnProperty(label))
-                this.graphs[label].strip_records_before(clamp_time, keep_one_extra);
+                this.graphs[label].strip_records_before(clamp_time);
     },
     reset: function () {
         this.graphs = {};
